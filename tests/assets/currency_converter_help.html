@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+</head>
+<body>
+<div>
+    <h3>
+        Currency Converter API instructions.
+    </h3>
+</div>
+<div>
+    <h4>Endpoint:</h4><span>'api/convert?amount=AMOUNT&src-curr=SRC_CURR&dst-curr=DST_CURR&date=DATE'</span>
+</div>
+<div>
+    <ul>
+        <li>
+            amount: the amount to convert (e.g. 12.35);
+        </li>
+        <li>
+            src-curr: ISO currency code for the source currency to convert (e.g. EUR, USD, GBP);
+        </li>
+        <li>
+            dst-curr: ISO currency code for the destination currency (e.g. EUR, USD, GBP);
+        </li>
+        <li>
+            date: reference_date for the exchange rate, in YYYY-MM-DD format.
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>
+        Returns
+    </h4>
+</div>
+<div>
+    <p>
+        {"amount": AMOUNT, "currency": CUR}
+    </p>
+</div>
+<div>
+    <ul>
+        <li>
+            amount: the converted amount;
+        </li>
+        <li>
+            currency: ISO currency code for the currency the amount is related to.
+            currency: ISO currency code for the currency the amount is related to.
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -6,7 +6,6 @@ from custom_api_exception.customexception import CustomAPIException
 from datetime import datetime
 
 
-# ToDo - To test
 def get_conversion_factor(exchange_rates_dict, src_currency, dst_currency, date):
     """
     Opens the updated XML document containing the updated exchange rates,
@@ -29,7 +28,10 @@ def get_conversion_factor(exchange_rates_dict, src_currency, dst_currency, date)
 
         if isinstance(exchange_rates_dict, dict) is False:
             raise CustomAPIException('Internal Error.', 500)
-        if all(isinstance(er, dict) for er in exchange_rates_dict):
+        if all(isinstance(er, dict) for (kr, er) in exchange_rates_dict.items()) is False:
+            raise CustomAPIException('Internal Error.', 500)
+        if all(all((type(k) is str) and (isinstance(v, Decimal) is True) for (k, v) in er.items()) is True
+                for (kr, er) in exchange_rates_dict.items()) is False:
             raise CustomAPIException('Internal Error.', 500)
 
         if type(date) is not str:
@@ -62,7 +64,6 @@ def get_conversion_factor(exchange_rates_dict, src_currency, dst_currency, date)
     return conversion_factor
 
 
-# ToDo - To Test
 def get_currency_converted_amount(exchange_rates_dict, amount, src_currency, dst_currency, date):
     """
     Converts the amount given in input from a specific source currency to a destination currency.
@@ -81,6 +82,37 @@ def get_currency_converted_amount(exchange_rates_dict, amount, src_currency, dst
     """
     converted_amount = None  # initializes the variable used ot store the value to return
     try:
+        # parameter validation section
+        if isinstance(exchange_rates_dict, dict) is False:
+            raise CustomAPIException('Internal Error.', 500)
+        if all(isinstance(er, dict) for (kr, er) in exchange_rates_dict.items()) is False:
+            raise CustomAPIException('Internal Error.', 500)
+        if all(all((type(k) is str) and (isinstance(v, Decimal) is True) for (k, v) in er.items()) is True
+                for (kr, er) in exchange_rates_dict.items()) is False:
+            raise CustomAPIException('Internal Error.', 500)
+
+        if isinstance(amount, Decimal) is False:
+            raise CustomAPIException(f'Invalid amount {amount}', 400)
+
+        if type(date) is not str:
+            raise CustomAPIException('Date must be a string.', 400)
+        if validate_date_string(date) is False:
+            raise CustomAPIException(f'Invalid date {date}', 400)
+
+        if type(src_currency) is not str:
+            raise CustomAPIException('Source currency must be a string.', 400)
+        if src_currency.isnumeric() is True:
+            raise CustomAPIException('Source currency must be a string.', 400)
+        if any(char.isdigit() for char in src_currency) is True:
+            raise CustomAPIException('Source currency must not contain digits.', 400)
+
+        if type(dst_currency) is not str:
+            raise CustomAPIException('Destination currency must be a string.', 400)
+        if dst_currency.isnumeric() is True:
+            raise CustomAPIException('Destination currency must be a string.', 400)
+        if any(char.isdigit() for char in dst_currency) is True:
+            raise CustomAPIException('Destination currency must not contain digits.', 400)
+
         # gets the factor to be used to convert the amount in input to the destination factor
         conversion_factor = get_conversion_factor(exchange_rates_dict, src_currency, dst_currency, date)
         if conversion_factor is not None:

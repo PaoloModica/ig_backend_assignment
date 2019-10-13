@@ -1,5 +1,8 @@
 Online currency converter
 
+Language: Python v3.6
+Framework: Flask, Flask-RESTful, UnitTest for Testing.
+
 The application provides a Web API exposing a currency converting service.
 
 ENDPOINTS:

@@ -30,6 +30,7 @@ MarkupSafe==1.0
 netifaces==0.10.4
 oauth==1.0.1
 olefile==0.45.1
+pbr==5.4.3
 pexpect==4.2.1
 Pillow==5.1.0
 protobuf==3.0.0
@@ -54,6 +55,7 @@ simplejson==3.13.2
 six==1.11.0
 system-service==0.3
 systemd-python==234
+testresources==2.0.1
 ubuntu-drivers-common==0.0.0
 ufw==0.36
 unattended-upgrades==0.1

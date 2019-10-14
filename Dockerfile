@@ -1,7 +1,5 @@
 FROM python:3
-RUN pip install flask
-RUN pip install flask-restful
-RUN pip install requests
+RUN pip install requirements.txt
 COPY ./custom_api_exception /custom_api_exception
 COPY ./assets /assets
 ADD ./resources.py /

@@ -1,7 +1,6 @@
 import unittest
 from unittest import TestCase
 from main import app
-from flask import jsonify
 from resources import get_updated_exchange_rates_document
 from decimal import Decimal, ROUND_DOWN
 import os

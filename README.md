@@ -44,7 +44,10 @@ Response example
 #### Run the project
 
 ##### Run with Docker
-- Pull `currency converter` application server image: `docker pull pwm91/currency_converter`
+- Pull `currency converter` application server image: 
+
+    `docker pull pwm91/currency_converter`
+
 - Run `currency converter` image: 
     - If you want to detach your console from the Docker service running the image:
     
@@ -60,4 +63,7 @@ Response example
 
 #### Run the tests
 
-
+- Pull `currency converter tester` image:
+  `docker pull pwm91/currency_converter_tester`
+- Run `currency converter tester` image:     
+  `docker run -p 8080:8080 pwm91/currency_converter_tester:latest`

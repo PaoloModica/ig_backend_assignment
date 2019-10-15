@@ -6,8 +6,8 @@ COPY ./custom_api_exception /custom_api_exception
 COPY ./assets /assets
 ADD ./resources.py /
 ADD ./main.py /
-ADD ./tests/test_resources.py /tests
-ADD ./tests/test_server.py /tests
-ADD ./tests/tester.py /tests
+ADD ./tests/test_resources.py /
+ADD ./tests/test_server.py /
+ADD ./tests/tester.py /
 EXPOSE 8080
-CMD python ./tests/tester.py
+CMD python ./tester.py

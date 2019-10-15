@@ -1,6 +1,6 @@
-### Online currency converter
+## Online currency converter
 
-#### Project Overview
+### Project Overview
 
 **Language**
 
@@ -14,7 +14,7 @@ Flask, Flask-RESTful, UnitTest for Testing.
 
 The application provides a Web API exposing a currency converting service.
 
-##### Endpoints:
+#### Endpoints:
 
 - `'/', '/help'`
 
@@ -41,14 +41,14 @@ Response example
 
 {"amount": 15.44, "currency": "USD"}
 
-#### Run the project
+### Run the project
 
-##### Run in your system
-###### System Requirements
+#### Run in your system
+##### System Requirements
 - `python v3.6`
 - `pip`
 - `virtualenv`
-###### Procedure
+##### Procedure
 - Clone or download this GitHub repository to a folder in your system;
 - Open a Terminal
 - change directory to the currency converter project folder;
@@ -72,10 +72,10 @@ Response example
 
    `curl http://0.0.0.0:8080/api/convert?amount=14.0&src-currency=EUR&dest-currency=USD&reference-date=2019-10-10`    
 
-##### Run with Docker
-###### System Requirements
+#### Run with Docker
+##### System Requirements
 - `Docker`
-###### Procedure
+##### Procedure
 - Pull `currency converter` application server image: 
 
     `docker pull pwm91/currency_converter`
@@ -93,14 +93,14 @@ Response example
 
     `curl http://0.0.0.0:8080/api/convert?amount=14.0&src-currency=EUR&dest-currency=USD&reference-date=2019-10-10`
 
-#### Run tests
+### Run tests
 
-##### Run in your system
-###### System Requirements
+#### Run in your system
+##### System Requirements
 - `python v3.6`
 - `pip`
 - `virtualenv`
-###### Procedure
+##### Procedure
 - Clone or download this GitHub repository to a folder in your system;
 - Open a Terminal
 - change directory to the currency converter project folder;
@@ -120,10 +120,10 @@ Response example
     
     `python tests/tester.py`
 
-##### Run with Docker
-###### System Requirements
+#### Run with Docker
+##### System Requirements
 - `Docker`
-###### Procedure
+##### Procedure
 - Pull `currency converter tester` image:
   `docker pull pwm91/currency_converter_tester`
 - Run `currency converter tester` image:     

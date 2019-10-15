@@ -14,11 +14,17 @@ Flask, Flask-RESTful, UnitTest for Testing.
 
 The application provides a Web API exposing a currency converting service.
 
+If the computer running the application has Internet connection, the server downloads from the Web the updated 
+list of the available exchange rates.
+
+If there is no Internet connection, the currency converter uses the list of exchange rates provided by a local
+XML file.
+
 #### Endpoints:
 
 - `'/', '/help'`
 
-Returns an HTML page explaining how the currency converter application works
+Returns an HTML page explaining how the currency converter application works.
 
 - `'/api/convert'`
 

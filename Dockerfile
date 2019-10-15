@@ -4,7 +4,7 @@ RUN pip install flask-restful
 RUN pip install requests
 COPY ./custom_api_exception /custom_api_exception
 COPY ./assets /assets
-ADD ./resources.py /
+COPY ./server /server
 ADD ./main.py /
 EXPOSE 8080
 CMD python ./main.py

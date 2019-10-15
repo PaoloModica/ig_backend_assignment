@@ -3,7 +3,7 @@ from unittest import TestCase
 import os
 import datetime
 from custom_api_exception.customexception import CustomAPIException
-import resources
+from server import resources
 from decimal import Decimal, ROUND_DOWN
 
 

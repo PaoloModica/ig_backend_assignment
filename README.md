@@ -43,7 +43,39 @@ Response example
 
 #### Run the project
 
+##### Run in your system
+###### System Requirements
+- `python v3.6`
+- `pip`
+- `virtualenv`
+###### Procedure
+- Clone or download this GitHub repository to a folder in your system;
+- Open a Terminal
+- change directory to the currency converter project folder;
+- Set up a new Python virtual environment:
+    
+    `virtualenv venv`
+    
+- Activate the virtual environment created before:
+    
+    `source venv/bin/activate`
+    
+- Install application requirements in the virtual environment:
+    
+    `pip install --upgrade -r requirements.txt`
+
+- Run the application:
+
+    `python main.py`
+
+- Check the server out with cURL or your favourite browser:
+
+   `curl http://0.0.0.0:8080/api/convert?amount=14.0&src-currency=EUR&dest-currency=USD&reference-date=2019-10-10`    
+
 ##### Run with Docker
+###### System Requirements
+- `Docker`
+###### Procedure
 - Pull `currency converter` application server image: 
 
     `docker pull pwm91/currency_converter`
@@ -61,8 +93,37 @@ Response example
 
     `curl http://0.0.0.0:8080/api/convert?amount=14.0&src-currency=EUR&dest-currency=USD&reference-date=2019-10-10`
 
-#### Run the tests
+#### Run tests
 
+##### Run in your system
+###### System Requirements
+- `python v3.6`
+- `pip`
+- `virtualenv`
+###### Procedure
+- Clone or download this GitHub repository to a folder in your system;
+- Open a Terminal
+- change directory to the currency converter project folder;
+- Set up a new Python virtual environment:
+    
+    `virtualenv venv`
+    
+- Activate the virtual environment created before:
+    
+    `source venv/bin/activate`
+    
+- Install application requirements in the virtual environment:
+    
+    `pip install --upgrade -r requirements.txt`
+
+- Run the tester:
+    
+    `python tests/tester.py`
+
+##### Run with Docker
+###### System Requirements
+- `Docker`
+###### Procedure
 - Pull `currency converter tester` image:
   `docker pull pwm91/currency_converter_tester`
 - Run `currency converter tester` image:     

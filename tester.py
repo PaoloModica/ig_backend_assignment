@@ -1,6 +1,6 @@
 import unittest
-from test_server import ServerTest
-from test_resources import ResourcesTest
+from tests.test_server import ServerTest
+from tests.test_resources import ResourcesTest
 
 if __name__ == '__main__':
     # initializes the Test Suite Runner, setting it up to return verbose output

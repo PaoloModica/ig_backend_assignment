@@ -1,7 +1,7 @@
 import unittest
 from unittest import TestCase
-from main import app
-from resources import get_updated_exchange_rates_document
+from server.flask_server import app
+from server.resources import get_updated_exchange_rates_document
 from decimal import Decimal, ROUND_DOWN
 import os
 

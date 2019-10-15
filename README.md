@@ -124,7 +124,7 @@ Response example
 
 - Run the tester:
     
-    `python tests/tester.py`
+    `python tester.py`
 
 #### Run with Docker
 ##### System Requirements
